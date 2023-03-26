@@ -1,0 +1,73 @@
+@charset "utf-8";
+/*
+
+   Style Sheet
+   Author: Alejandro Reyes
+   Date: 3/21/2023  
+   
+   Filename: pc_grids.css
+
+*/
+
+
+/* Grid Styles for Page Body */
+
+body {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "header   header"
+                         "intro    faq"
+                         "articles faq"
+                         "footer    footer";
+    grid-column-gap: 15px;
+}
+
+body > header {
+    grid-row: 1;
+    grid-column: 1/-1;
+} 
+
+body > article {grid-area: intro;}
+body > aside {grid-area: faq;}
+body > section {grid-area: articles;}
+body > footer {grid-area: footer;}
+
+/* Grid Styles for Nested Grid */
+
+section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+section > h1 {
+    grid-area: 1/1/2/3;
+} 
+
+
+/* Nav */
+
+nav.horizontalNavigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black
+}
+
+nav.horizontalNavigation li {
+   display: block;
+   float: left;
+}
+
+nav.horizontalNavigation li a {
+   display: block;
+   color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+   text-align: center;
+}  
+
+li a:hover {
+    background-color: ghostwhite;
+} 
